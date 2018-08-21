@@ -1,19 +1,36 @@
 <template>
 
   <div class="container">
-    <mt-button type="primary" @click.native="handleClick" style="width: 100%">primary</mt-button>
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-8">
+        <div class="page-header"><h2>Router Basic - 01</h2></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-2">
+        <div class="list-group">
+          <router-link to="/about" class="list-group-item" >About</router-link>
+          <router-link to="/home" class="list-group-item" >Home</router-link>
+
+        </div>
+      </div>
+
+      <div class="col-xs-6">
+        <div class="panel">
+          <div class="panel-body">
+            <router-view msg="HelloWorld"></router-view>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 </template>
 
 <script>
-  import {Toast} from 'mint-ui'
   export default {
-    methods: {
-      handleClick() {
-        Toast('HelloWorld!!!')
-      }
-    }
+
   }
 </script>
 
