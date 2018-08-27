@@ -7,6 +7,9 @@
         <button @click="replaceShow(message.id)">replace查看</button>
       </li>
     </ul>
+
+    <button @click="$router.back()">回退</button>
+
     <hr style="height:2px;border:none;border-top:5px dotted #185598;"/>
     <router-view></router-view>
   </div>
@@ -25,8 +28,8 @@
       pushShow(id) {
         this.$router.push(`/home/message/detail/${id}`)
       },
-      replaceShow() {
-        this.$router.push(`/home/message/detail/${id}`)
+      replaceShow(id) {
+        this.$router.replace(`/home/message/detail/${id}`)
       }
     },
 
